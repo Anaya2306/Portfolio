@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anaya Shende | Software Engineer Portfolio</title>
+  <meta name="description" content=" Projects, skills, certifications and contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    try { document.documentElement.dataset.theme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); }
+    catch (e) { document.documentElement.dataset.theme = 'light'; }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wipe" id="wipe" aria-hidden="true"><span id="wipe-label"></span></div>
+  <div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+    <h2 id="gate-title">Who's viewing?</h2>
+    <ul class="profiles" id="profiles"></ul>
+  </div>
+
+  <header class="site-header">
+    <nav class="wrap" aria-label="Primary">
+      <a class="brand" href="#home">Anaya</a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#experience">Experience</a></li>
+        <li><a href="#participation">Participation</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="switch" class="icon-btn" aria-label="Switch viewer profile">Switch viewer</button>
+      <button id="theme" class="icon-btn" aria-label="Switch colour theme">Theme</button>
+      <button id="menu" class="icon-btn menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="home" class="hero wrap active">
+      <div class="hero-text">
+        <p class="hello" id="hello" aria-live="polite"></p>
+        <h1>Anaya Shende </h1>
+        <p class="lead" id="lead"></p>
+        <div class="actions"><a class="btn primary" id="cta" href="#projects">See projects</a></div>
+        <ul class="icons" aria-label="Email, GitHub and LinkedIn"></ul>
+        <ul class="quick" id="quick" aria-label="Quick links"></ul>
+      </div>
+      <figure class="photo" id="photo"><span class="ring" aria-hidden="true"></span><span class="initials" aria-hidden="true">AS</span></figure>
+    </section>
+
+    <section id="about" class="wrap"><h2>About</h2>
+      <div class="two-col"><div id="about-text"></div><div><h3>Interests</h3><ul class="chips" id="interests"></ul><p class="muted small">Interests are areas I'm exploring, separate from the skills I've used in projects.</p></div></div>
+    </section>
+    <section id="education" class="wrap"><h2>Education</h2><ol class="timeline" id="education-list"></ol></section>
+    <section id="skills" class="wrap"><h2>Skills</h2><div class="skill-grid" id="skills-list"></div></section>
+    <section id="projects" class="wrap"><h2>Projects</h2>
+      <div id="filters" class="filters" role="group" aria-label="Filter projects"></div>
+      <ul id="project-list" class="project-list"></ul>
+    </section>
+    <section id="experience" class="wrap"><h2>Experience</h2><ol class="timeline" id="experience-list"></ol></section>
+    <section id="participation" class="wrap"><h2>Participation</h2><ol class="timeline" id="participation-list"></ol></section>
+    <section id="certifications" class="wrap"><h2>Certifications</h2><ul class="cert-grid" id="cert-list"></ul></section>
+
+    <section id="contact" class="wrap"><h2>Contact</h2>
+      <p id="contact-intro">Hiring, or want to talk about a project? Send a message , Lets Connect </p>
+      <form id="contact-form" novalidate>
+        <label for="name" id="name-label">Name</label>
+        <input id="name" name="name" autocomplete="name" required>
+        <span class="error" data-for="name" aria-live="polite"></span>
+        <label for="email" id="email-label">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+        <span class="error" data-for="email" aria-live="polite"></span>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <span class="error" data-for="message" aria-live="polite"></span>
+        <button class="btn primary" type="submit">Send message</button>
+        <p id="form-status" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="wrap site-footer"><ul class="icons" aria-label="Email, GitHub and LinkedIn"></ul><p>&copy; <span id="year"></span> Anaya Shende. Built with plain HTML, CSS and JavaScript.</p></footer>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
